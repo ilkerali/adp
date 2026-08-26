@@ -1,0 +1,129 @@
+/* ============================================================
+   ADP — Association for Digital Progress (ADP · KODEX)
+   Small companion stylesheet. Tailwind does the layout work;
+   this file holds the few things Tailwind utilities can't.
+   ============================================================ */
+
+html { -webkit-text-size-adjust: 100%; }
+body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+
+::selection { background: #E7A83A; color: #0A1226; }
+
+/* Visible keyboard focus everywhere, never on mouse click */
+:focus-visible {
+  outline: 2px solid #E7A83A;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Display type ---------- */
+.font-display { font-optical-sizing: auto; }
+.headline {
+  font-family: "Bricolage Grotesque", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+/* ---------- Registry code chip (site signature) ---------- */
+.code-chip {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ---------- Blueprint grid used behind dark panels ---------- */
+.grid-blueprint {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: center;
+}
+.grid-blueprint-light {
+  background-image:
+    linear-gradient(rgba(10, 18, 38, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 18, 38, .05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(16px); }
+.reveal.in {
+  opacity: 1;
+  transform: none;
+  transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.in.d1 { transition-delay: .07s; }
+.reveal.in.d2 { transition-delay: .14s; }
+.reveal.in.d3 { transition-delay: .21s; }
+
+/* ---------- Header navigation ---------- */
+.nav-panel {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+.nav-item:hover > .nav-panel,
+.nav-item:focus-within > .nav-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -21px;
+  height: 2px;
+  background: #E7A83A;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s cubic-bezier(.2,.7,.3,1);
+}
+.nav-link:hover::after,
+.nav-link[data-active="true"]::after { transform: scaleX(1); }
+
+/* Mobile menu */
+body.menu-open { overflow: hidden; }
+
+/* ---------- Rotating hero word ---------- */
+.rotator { display: inline-grid; vertical-align: bottom; }
+.rotator > span {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(.35em);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.2,.7,.3,1);
+  white-space: nowrap;
+}
+.rotator > span.on { opacity: 1; transform: none; }
+
+/* ---------- Long-form document pages ---------- */
+.doc-prose h2 {
+  font-family: "Bricolage Grotesque", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.doc-prose { scroll-padding-top: 120px; }
+.doc-prose section { scroll-margin-top: 110px; }
+
+/* ---------- Print (document pages should print cleanly) ---------- */
+@media print {
+  header, footer, .no-print { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  main { max-width: none !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 10px; }
+}
+
+/* ---------- Motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

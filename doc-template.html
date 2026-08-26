@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ============================================================
+     TEMPLATE FOR A DOCUMENT PAGE
+     1. Copy this file, e.g. to doc-code-of-ethics.html
+     2. Replace every ALL-CAPS placeholder below
+     3. In assets/site.js set that document's `page` field to the new file name
+     ============================================================ -->
+<title>ADP-XX DOCUMENT TITLE — ADP · KODEX</title>
+<meta name="description" content="SHORT DESCRIPTION OF THE DOCUMENT.">
+<script src="assets/head.js"></script>
+</head>
+<body class="bg-paper font-sans text-ink antialiased" data-page="documents">
+
+<div data-site-header></div>
+
+<main id="main">
+
+  <section class="relative overflow-hidden bg-ink text-white">
+    <div class="grid-blueprint absolute inset-0" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-content px-5 pb-14 pt-12 lg:px-8 lg:pb-16 lg:pt-16">
+      <a href="documents.html" class="code-chip inline-flex items-center gap-2 text-white/50 transition hover:text-amber">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Document registry
+      </a>
+      <div class="mt-7 flex flex-wrap items-center gap-4">
+        <span class="code-chip rounded-full border border-amber/40 px-3 py-1 text-amber">ADP-XX</span>
+        <span class="code-chip text-white/45">In force · Adopted DD.MM.YYYY</span>
+      </div>
+      <h1 class="headline mt-6 max-w-3xl text-[38px] sm:text-[50px] lg:text-[58px]">DOCUMENT TITLE</h1>
+      <p class="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-white/65">ONE OR TWO SENTENCES ON WHAT THIS DOCUMENT COVERS AND WHO IT APPLIES TO.</p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="files/ADP-XX-file-name.pdf" class="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3.5 font-semibold text-ink transition hover:bg-white">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+          Download PDF
+        </a>
+        <button onclick="window.print()" class="no-print inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 font-semibold transition hover:border-white/60">Print</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-content px-5 py-16 lg:px-8 lg:py-20">
+    <div class="grid gap-14 lg:grid-cols-[240px_1fr]">
+
+      <aside class="no-print lg:sticky lg:top-28 lg:self-start">
+        <p class="code-chip mb-5 text-ink/40">Contents</p>
+        <nav class="space-y-1 border-l border-mist">
+          <a href="#s1" class="block border-l-2 border-transparent py-1.5 pl-4 text-[14px] text-ink/65 transition hover:border-amber hover:text-ink">1. SECTION NAME</a>
+          <a href="#s2" class="block border-l-2 border-transparent py-1.5 pl-4 text-[14px] text-ink/65 transition hover:border-amber hover:text-ink">2. SECTION NAME</a>
+          <a href="#s3" class="block border-l-2 border-transparent py-1.5 pl-4 text-[14px] text-ink/65 transition hover:border-amber hover:text-ink">3. SECTION NAME</a>
+        </nav>
+      </aside>
+
+      <article class="doc-prose max-w-prose">
+
+        <div class="mb-12 rounded-2xl border border-amber/30 bg-amber-soft p-6">
+          <p class="code-chip text-amber-dark">Scope</p>
+          <p class="mt-3 text-[15px] leading-relaxed text-ink/75">WHO THIS DOCUMENT BINDS — MEMBERS, STAFF, VOLUNTEERS, PARTNERS, CONTRACTORS.</p>
+        </div>
+
+        <section id="s1" class="mb-12">
+          <p class="code-chip text-ink/40">Section 1</p>
+          <h2 class="mt-3 text-[26px] text-ink">SECTION NAME</h2>
+          <p class="mt-5 text-[16px] leading-relaxed text-ink/75">PARAGRAPH TEXT.</p>
+          <ul class="mt-5 space-y-2.5 text-[16px] text-ink/75">
+            <li class="flex gap-3"><span class="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-amber"></span>LIST ITEM</li>
+            <li class="flex gap-3"><span class="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-amber"></span>LIST ITEM</li>
+          </ul>
+        </section>
+
+        <section id="s2" class="mb-12">
+          <p class="code-chip text-ink/40">Section 2</p>
+          <h2 class="mt-3 text-[26px] text-ink">SECTION NAME</h2>
+          <p class="mt-5 text-[16px] leading-relaxed text-ink/75">PARAGRAPH TEXT.</p>
+        </section>
+
+        <section id="s3" class="mb-12">
+          <p class="code-chip text-ink/40">Section 3</p>
+          <h2 class="mt-3 text-[26px] text-ink">SECTION NAME</h2>
+          <p class="mt-5 text-[16px] leading-relaxed text-ink/75">PARAGRAPH TEXT.</p>
+        </section>
+
+        <div class="no-print mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-mist pt-8">
+          <p class="code-chip text-ink/40">End of document ADP-XX</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="files/ADP-XX-file-name.pdf" class="rounded-full bg-ink px-5 py-3 text-[14px] font-semibold text-white transition hover:bg-ink-600">Download PDF</a>
+            <a href="documents.html" class="rounded-full border border-ink/15 px-5 py-3 text-[14px] font-semibold transition hover:border-ink/50">Back to registry</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+</main>
+
+<div data-site-footer></div>
+<script src="assets/site.js"></script>
+</body>
+</html>
