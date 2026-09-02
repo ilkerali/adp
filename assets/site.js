@@ -125,7 +125,7 @@ const DOCUMENTS = [
         code: 'ADP-01', title: 'Statute of the Association', lang: 'EN',
         status: 'In force',
         summary: 'The constitutive act: name, seat, objectives, membership, governing bodies, finances, transparency and dissolution. Twelve chapters, 100+ articles.',
-        page: 'doc-statute.html', pdf: 'files/ADP-01-statute-en.pdf', source: 'ADP_Statut_Tuzuk.docx',
+        page: 'documents/statute.html', pdf: 'files/ADP-01-statute-en.pdf', source: 'ADP_Statut_Tuzuk.docx',
       },
       {
         code: 'ADP-02', title: 'Статут на здружението (Macedonian)', lang: 'MK',
@@ -327,7 +327,7 @@ function renderFooter(mount) {
         <div class="grid gap-10 sm:grid-cols-3">
           ${col('Organisation', [['Who we are', 'about.html'], ['Governance & Board', 'governance.html'], ['Membership', 'membership.html'], ['News & events', 'news.html']])}
           ${col('Work', [['Areas of work', 'work.html'], ['Projects & partnerships', 'projects.html'], ['Publications & journal', 'publications.html'], ['Contact', 'contact.html']])}
-          ${col('Transparency', [['Document registry', 'documents.html'], ['Statute', 'doc-statute.html'], ['Code of ethics', 'documents.html#ethics'], ['Data protection', 'documents.html#compliance']])}
+          ${col('Transparency', [['Document registry', 'documents.html'], ['Statute', 'documents/statute.html'], ['Code of ethics', 'documents.html#ethics'], ['Data protection', 'documents.html#compliance']])}
         </div>
       </div>
 
