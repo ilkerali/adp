@@ -151,6 +151,16 @@ const DOCUMENTS = [
         page: '', pdf: 'files/ADP-04-eticki-kodeks-mk.pdf', source: 'ADP_Eticki_Kodeks_Integritet_Profesionalno.docx',
       },
       {
+  code: "ADP-04",
+  title: "GDPR & Data Protection Policy",
+  group: "Ethics & integrity",
+  lang: "EN",
+  status: "In force",
+  summary: "How ADP collects, stores and protects personal data …",
+  html: "documents/gdpr-policy.html",
+  pdf:  "documents/files/ADP-04-gdpr-policy-en.pdf"
+},
+      {
         code: 'ADP-05', title: 'Anti-Corruption and Anti-Bribery Policy', lang: 'EN',
         status: 'In force',
         summary: 'Zero-tolerance rules on bribery, facilitation payments, gifts and hospitality, plus due diligence on partners and a confidential reporting channel.',
