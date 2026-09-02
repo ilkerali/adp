@@ -55,21 +55,46 @@ const NAV = [
    and change `photo` to e.g. 'assets/img/president.jpg'.
    Portrait crop, ideally 800×800 px.                          */
 const BOARD = [
-  {
+   {
     name: 'Aybeyan Selim',
     role: 'President', // Başkan
     duty: 'Legal representative of the association',
-    photo: 'assets/img/foto-aybeyan.webp', // Fotoğraf dosyası
+    photo: 'assets/img/foto-aybeyan.jpeg', // Fotoğraf dosyası
     bio: 'Professor at International Vision University with 12 years of experience in education. Leads the Managing Board and represents ADP before national and international institutions.',
     focus: ['Strategy', 'Representation', 'Education'],
   },
   {
-    name: 'İlker Ali', // Sizin adınız
+    name: 'Ilker Ali', // Sizin adınız
     role: 'Vice-President', // Başkan Yardımcısı
     duty: 'Deputises for the President',
     photo: 'assets/img/ilker-ali.jpg', // Sizin fotoğrafınız
     bio: 'Assoc. Prof. Dr. | Microsoft Learn for Educators Program Advisor | Head of IT. Supports the President in strategic coordination and takes over representation duties in their absence.',
     focus: ['Coordination', 'Institutional relations', 'Digital Education'],
+  },
+    {
+    name: 'Arafat Useini',
+    role: 'Board Member',
+    duty: 'Research & publications',
+    photo: 'assets/img/foto-arafat.webp', // Arafat'ın fotoğrafı
+    bio: 'Assoc.Prof.Dr. and President of the Senate at International Vision University. Coordinates research activity, analytical reports and the editorial preparation of ADP publications.',
+    focus: ['Research', 'Editorial', 'Academic Cooperation'],
+  },
+  {
+    name: 'Dr. Fehmi Skender',
+    role: 'Board Member',
+    duty: 'Education & digital skills',
+    photo: 'assets/img/foto-fehmi.png', // Fehmi'nin fotoğrafı
+    bio: 'Assist.Prof.Dr. with a PhD in Informatic & Communication Technologies. Leads training programmes, digital literacy activities and cooperation with schools and universities.',
+    focus: ['Training', 'Digital literacy', 'Research'],
+  },
+
+  {
+    name: 'Ersoy H.',
+    role: 'Board Member',
+    duty: 'Digital ethics & artificial intelligence',
+    photo: 'assets/img/foto-ersoy.jpeg', // Ersoy'un fotoğrafı
+    bio: 'Senior Developer / Tech Lead with 15+ years of professional experience. Works on responsible technology use, data protection, ethical review, and software architecture.',
+    focus: ['AI ethics', 'Data protection', 'Software Architecture'],
   },
   {
     name: 'Alican Ali',
@@ -80,31 +105,7 @@ const BOARD = [
     focus: ['EU programmes', 'Software Engineering', 'Consortia'],
   },
   {
-    name: 'Dr. Fehmi Skender',
-    role: 'Board Member',
-    duty: 'Education & digital skills',
-    photo: 'assets/img/foto-fehmi.png', // Fehmi'nin fotoğrafı
-    bio: 'Assist.Prof.Dr. with a PhD in Informatic & Communication Technologies. Leads training programmes, digital literacy activities and cooperation with schools and universities.',
-    focus: ['Training', 'Digital literacy', 'Research'],
-  },
-  {
-    name: 'Arafat Useini',
-    role: 'Board Member',
-    duty: 'Research & publications',
-    photo: 'assets/img/foto-arafat.webp', // Arafat'ın fotoğrafı
-    bio: 'Assoc.Prof.Dr. and President of the Senate at International Vision University. Coordinates research activity, analytical reports and the editorial preparation of ADP publications.',
-    focus: ['Research', 'Editorial', 'Academic Cooperation'],
-  },
-  {
-    name: 'Ersoy H.',
-    role: 'Board Member',
-    duty: 'Digital ethics & artificial intelligence',
-    photo: 'assets/img/foto-ersoy.jpeg', // Ersoy'un fotoğrafı
-    bio: 'Senior Developer / Tech Lead with 15+ years of professional experience. Works on responsible technology use, data protection, ethical review, and software architecture.',
-    focus: ['AI ethics', 'Data protection', 'Software Architecture'],
-  },
-  {
-    name: 'Name Surname', // Burayı boş bıraktım, siz doldurun
+    name: 'Semra Selim', // Burayı boş bıraktım, siz doldurun
     role: 'Board Member',
     duty: 'To be announced',
     photo: 'assets/img/avatar-7.svg',
@@ -230,20 +231,20 @@ function navMobile() {
   return NAV.map((item) => {
     const kids = item.children || [{ label: item.label, href: item.href, note: '' }];
     return `<div class="border-b border-white/10 py-5">
-      <p class="code-chip mb-3 text-amber">${item.label}</p>
-      ${kids.map((c) => `<a href="${c.href}" class="block py-2 font-display text-[26px] font-semibold tracking-tight ${isActive(c.href) ? 'text-amber' : 'text-white'}">${c.label}</a>`).join('')}
+      <p class="code-chip mb-3 text-brand-light">${item.label}</p>
+      ${kids.map((c) => `<a href="${c.href}" class="block py-2 font-display text-[26px] font-semibold tracking-tight ${isActive(c.href) ? 'text-brand-light' : 'text-white'}">${c.label}</a>`).join('')}
     </div>`;
   }).join('');
 }
 
 function renderHeader(mount) {
   mount.outerHTML = `
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-amber focus:px-4 focus:py-2 focus:font-semibold focus:text-ink">Skip to content</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-brand focus:px-4 focus:py-2 focus:font-semibold focus:text-white">Skip to content</a>
 
   <div class="hidden bg-ink-900 text-white/55 lg:block">
     <div class="mx-auto flex max-w-content items-center justify-between px-8 py-2">
       <p class="code-chip">${SITE.legalName}</p>
-      <p class="code-chip">${SITE.city} · North Macedonia — <a class="text-amber hover:underline" href="mailto:${SITE.email}">${SITE.email}</a></p>
+      <p class="code-chip">${SITE.city} · North Macedonia — <a class="text-brand-light hover:underline" href="mailto:${SITE.email}">${SITE.email}</a></p>
     </div>
   </div>
 
@@ -252,7 +253,7 @@ function renderHeader(mount) {
       <div class="flex h-[68px] items-center justify-between gap-8 lg:h-[76px]">
 
         <a href="index.html" class="flex shrink-0 items-center gap-3">
-          <span class="grid h-11 w-11 place-items-center rounded-[13px] bg-amber font-mono text-[13px] font-semibold tracking-tight text-ink">ADP</span>
+          <img src="assets/img/logo-mark.png" alt="ADP" width="44" height="44" class="h-11 w-11 shrink-0">
           <span class="hidden leading-[1.15] sm:block">
             <span class="block font-display text-[16px] font-bold tracking-tight text-white">Association for Digital&nbsp;Progress</span>
             <span class="code-chip block text-white/45">ADP · KODEX</span>
@@ -262,7 +263,7 @@ function renderHeader(mount) {
         <nav class="hidden items-center gap-8 lg:flex" aria-label="Main">${navDesktop()}</nav>
 
         <div class="flex items-center gap-3">
-          <a href="contact.html" class="hidden rounded-full bg-amber px-5 py-2.5 text-[13.5px] font-semibold text-ink transition hover:bg-white lg:inline-block">Partner with us</a>
+          <a href="contact.html" class="hidden rounded-full bg-brand px-5 py-2.5 text-[13.5px] font-semibold text-white transition hover:bg-white lg:inline-block hover:text-brand-dark">Partner with us</a>
           <button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"
             class="grid h-11 w-11 place-items-center rounded-xl border border-white/15 text-white lg:hidden">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -281,8 +282,8 @@ function renderHeader(mount) {
     </div>
     <div class="h-[calc(100%-68px)] overflow-y-auto px-5 pb-16">
       ${navMobile()}
-      <a href="contact.html" class="mt-8 block rounded-full bg-amber px-6 py-4 text-center font-semibold text-ink">Partner with us</a>
-      <p class="mt-8 text-[13px] leading-relaxed text-white/45">${SITE.street}<br>${SITE.city}, ${SITE.country}<br><a class="text-amber" href="mailto:${SITE.email}">${SITE.email}</a></p>
+      <a href="contact.html" class="mt-8 block rounded-full bg-brand px-6 py-4 text-center font-semibold text-white">Partner with us</a>
+      <p class="mt-8 text-[13px] leading-relaxed text-white/45">${SITE.street}<br>${SITE.city}, ${SITE.country}<br><a class="text-brand-light" href="mailto:${SITE.email}">${SITE.email}</a></p>
     </div>
   </div>`;
 }
@@ -290,7 +291,7 @@ function renderHeader(mount) {
 function renderFooter(mount) {
   const col = (title, links) => `
     <div>
-      <p class="code-chip mb-5 text-amber">${title}</p>
+      <p class="code-chip mb-5 text-brand-light">${title}</p>
       <ul class="space-y-3">
         ${links.map((l) => `<li><a href="${l[1]}" class="text-[14.5px] text-white/65 transition hover:text-white">${l[0]}</a></li>`).join('')}
       </ul>
@@ -303,11 +304,11 @@ function renderFooter(mount) {
       <div class="grid gap-12 border-b border-white/10 py-16 lg:grid-cols-[1.3fr_2fr] lg:py-20">
         <div>
           <div class="flex items-center gap-3">
-            <span class="grid h-11 w-11 place-items-center rounded-[13px] bg-amber font-mono text-[13px] font-semibold text-ink">ADP</span>
+            <span class="grid h-11 w-11 place-items-center rounded-[13px] bg-brand font-mono text-[13px] font-semibold text-white">ADP</span>
             <span class="font-display text-[17px] font-bold leading-tight tracking-tight">Association for<br>Digital Progress</span>
           </div>
           <p class="mt-6 max-w-sm text-[15px] leading-relaxed text-white/60">A voluntary, independent, non-partisan and non-profit citizens' association working for digital development, education, science and sustainable growth.</p>
-          <a href="contact.html" class="mt-7 inline-flex items-center gap-2 border-b border-amber pb-1 font-display text-[17px] font-semibold text-amber">
+          <a href="contact.html" class="mt-7 inline-flex items-center gap-2 border-b border-brand-light pb-1 font-display text-[17px] font-semibold text-brand-light">
             Start a conversation
             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -328,8 +329,8 @@ function renderFooter(mount) {
         <div>
           <p class="code-chip mb-3 text-white/40">Contact</p>
           <p class="text-[14.5px] leading-relaxed text-white/70">
-            <a href="mailto:${SITE.email}" class="transition hover:text-amber">${SITE.email}</a><br>
-            <a href="https://${SITE.website}" class="transition hover:text-amber">${SITE.website}</a>
+            <a href="mailto:${SITE.email}" class="transition hover:text-brand-light">${SITE.email}</a><br>
+            <a href="https://${SITE.website}" class="transition hover:text-brand-light">${SITE.website}</a>
           </p>
         </div>
         <div>
@@ -351,10 +352,10 @@ function renderPageHead(mount) {
   mount.outerHTML = `
   <section class="relative overflow-hidden bg-ink text-white">
     <div class="grid-blueprint absolute inset-0" aria-hidden="true"></div>
-    <div class="absolute -right-40 -top-40 h-[420px] w-[420px] rounded-full bg-amber/10 blur-3xl" aria-hidden="true"></div>
+    <div class="absolute -right-40 -top-40 h-[420px] w-[420px] rounded-full bg-brand/20 blur-3xl" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-content px-5 pb-16 pt-14 lg:px-8 lg:pb-20 lg:pt-20">
       <div class="flex items-center gap-4">
-        <span class="code-chip rounded-full border border-amber/40 px-3 py-1 text-amber">${d.code || 'ADP'}</span>
+        <span class="code-chip rounded-full border border-brand-light/40 px-3 py-1 text-brand-light">${d.code || 'ADP'}</span>
         <span class="code-chip text-white/45">${d.eyebrow || ''}</span>
       </div>
       <h1 class="headline mt-7 max-w-4xl text-[40px] sm:text-[52px] lg:text-[64px]">${d.title || ''}</h1>
@@ -421,7 +422,7 @@ function renderPageHead(mount) {
           <span class="code-chip absolute left-4 top-4 rounded-full bg-ink/85 px-3 py-1 text-white">${String(idx + 1).padStart(2, '0')}</span>
         </div>
         <div class="p-6">
-          <p class="code-chip text-amber-dark">${m.role}</p>
+          <p class="code-chip text-brand-dark">${m.role}</p>
           <h3 class="mt-2 font-display text-[22px] font-bold tracking-tight text-ink">${m.name}</h3>
           <p class="mt-1 text-[14px] font-medium text-ink/55">${m.duty}</p>
           <p class="mt-4 text-[14.5px] leading-relaxed text-ink/70">${m.bio}</p>
@@ -446,14 +447,14 @@ function renderPageHead(mount) {
           ${g.items.map((d) => `
             <article class="reveal grid gap-6 rounded-2xl border border-mist bg-card p-6 shadow-card transition hover:border-ink/20 lg:grid-cols-[130px_1fr_auto] lg:items-start lg:p-7">
               <div>
-                <p class="code-chip text-amber-dark">${d.code}</p>
+                <p class="code-chip text-brand-dark">${d.code}</p>
                 <p class="code-chip mt-2 text-ink/40">${d.lang}</p>
               </div>
               <div>
                 <h3 class="font-display text-[20px] font-bold tracking-tight text-ink">${d.title}</h3>
                 <p class="mt-2 max-w-2xl text-[14.5px] leading-relaxed text-ink/65">${d.summary}</p>
-                <p class="code-chip mt-4 inline-flex items-center gap-2 rounded-full bg-teal-soft px-3 py-1 text-teal-dark">
-                  <span class="h-1.5 w-1.5 rounded-full bg-teal"></span>${d.status}
+                <p class="code-chip mt-4 inline-flex items-center gap-2 rounded-full bg-accent-soft px-3 py-1 text-accent-dark">
+                  <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>${d.status}
                 </p>
               </div>
               <div class="flex flex-wrap gap-2 lg:flex-col lg:items-stretch">

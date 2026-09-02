@@ -154,10 +154,43 @@ The handler lives at the bottom of `assets/site.js`.
 
 ---
 
-## 8. Design notes
+## 8. Colours
+
+All colours live in one place: the `colors` block of `assets/tailwind.config.js`.
+
+| Token | Value | Where it appears |
+|---|---|---|
+| `ink` | `#0B1B33` | Header, hero, footer, dark cards, body text |
+| `ink-900` | `#061224` | Footer background, top strip |
+| `ink-600` | `#1D4477` | Hover state of dark buttons |
+| `paper` | `#EDF1F7` | Page background |
+| `mist` | `#D5DEEA` | Every border, rule and divider |
+| `card` | `#FFFFFF` | Card surfaces |
+| `brand` | `#1F5FD1` | Filled buttons, logo mark, bullets — always with white text |
+| `brand-light` | `#8CB6F5` | Accent **text** on dark navy backgrounds |
+| `brand-dark` | `#16408F` | Accent **text** on white or paper backgrounds |
+| `brand-soft` | `#E4ECFB` | Tinted backgrounds: icon tiles, note boxes |
+| `accent` | `#0E7C8A` | Secondary accent, used sparingly for status pills |
+
+The accent exists in four tones for one reason: a single blue cannot be readable on both a
+white card and a navy panel. `brand-light` is for dark backgrounds, `brand-dark` for light ones.
+If you change `brand`, change these two to a lighter and a darker version of the same hue.
+
+Four values are hard-coded outside Tailwind and need editing by hand:
+
+- `assets/styles.css` line 10 — text selection colour
+- `assets/styles.css` line 14 — keyboard focus ring
+- `assets/styles.css` line 81 — the menu underline (uses `brand-light`, it sits on navy)
+- `assets/head.js` line 17 — `theme-color`, the mobile browser bar
+
+The logo mark in `assets/img/favicon.svg` uses the same two colours.
+
+After editing, refresh with **Ctrl+F5**. Tailwind recompiles in the browser, so there is no
+build step while you work.
+
+## 9. Design notes
 
 - **Type:** Bricolage Grotesque (display), Public Sans (body), IBM Plex Mono (registry codes).
-- **Colour:** midnight navy `#0A1226`, cool paper `#EEF1F5`, amber `#E7A83A`, teal `#1E7F73`.
 - **The recurring device** is the registry code — `§ 01`, `ADP-03` — a nod to the association's
   own name, KODEX, and to the fact that everything here is on the record.
 - Responsive to 360 px, keyboard-navigable, respects `prefers-reduced-motion`, and document

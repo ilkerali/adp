@@ -6,18 +6,37 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
+        /* ---- Dark navy: header, hero, footer, dark cards, body text ---- */
         ink: {
-          DEFAULT: '#0A1226',
-          900: '#060B18',
-          800: '#0A1226',
-          700: '#131E3A',
-          600: '#22304F',
+          DEFAULT: '#0B1B33',
+          900: '#061224',   // footer, top strip
+          800: '#0B1B33',
+          700: '#12294A',
+          600: '#1D4477',   // hover state of dark buttons
         },
-        paper: '#EEF1F5',
-        mist: '#DDE3EC',
-        card: '#FFFFFF',
-        amber: { DEFAULT: '#E7A83A', dark: '#B4791B', soft: '#FBF0DA' },
-        teal: { DEFAULT: '#1E7F73', dark: '#14655B', soft: '#E1F0ED' },
+        /* ---- Neutrals ---- */
+        paper: '#EDF1F7',   // page background
+        mist:  '#D5DEEA',   // all borders, rules, dividers
+        card:  '#FFFFFF',   // card surfaces
+
+        /* ---- Primary accent: corporate blue ----
+           DEFAULT = filled buttons, logo mark, bullets (always with white text)
+           light   = accent TEXT on dark navy backgrounds
+           dark    = accent TEXT on white / paper backgrounds
+           soft    = tinted backgrounds (icon tiles, note boxes)              */
+        brand: {
+          DEFAULT: '#1F5FD1',
+          light:   '#8CB6F5',
+          dark:    '#16408F',
+          soft:    '#E4ECFB',
+        },
+
+        /* ---- Secondary accent: petrol, used sparingly for status ---- */
+        accent: {
+          DEFAULT: '#0E7C8A',
+          dark:    '#0A5C67',
+          soft:    '#DEF0F3',
+        },
       },
       fontFamily: {
         display: ['"Bricolage Grotesque"', 'Georgia', 'serif'],

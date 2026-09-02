@@ -14,7 +14,7 @@
       '&family=IBM+Plex+Mono:wght@400;500;600' +
       '&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">' +
     '<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">' +
-    '<meta name="theme-color" content="#0A1226">' +
+    '<meta name="theme-color" content="#0B1B33">' +
     '<script src="https://cdn.tailwindcss.com?plugins=forms,typography"><\/script>' +
     '<script src="assets/tailwind.config.js"><\/script>' +
     '<link rel="stylesheet" href="assets/styles.css">'
