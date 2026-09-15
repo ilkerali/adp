@@ -1,6 +1,6 @@
 /* ============================================================
    ADP — Association for Digital Progress (ADP · KODEX)
-   site.js — one place for shared data + shared components.
+   site.js — one place for shared data + shared components..
 
    WHAT YOU EDIT HERE:
      SITE       → name, address, e-mail, social links
